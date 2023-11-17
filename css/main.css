@@ -1,0 +1,54 @@
+body{
+    background-color: #f3f3f3;
+    padding: 10px;
+}
+.content {
+    overflow-y: auto;
+    background-color: #fff;
+    color: #202124;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(32, 33, 36, 0.28);
+    line-height: 1.6;
+    font-family: 'Arial', sans-serif;
+}
+.logo{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.delimiter{
+    width: 10px;
+    max-width: 10px;
+}
+@media (min-width: 992px) {
+    .sidebar{
+        max-width: 250px;
+    }
+}
+@media (max-width: 992px) {
+    .content{
+       padding: 15px;
+    }
+    .logo{
+        display: none;
+    }
+}
+/* Дополнительные стили для абсолютного позиционирования меню */
+@media (max-width: 991px) {
+    .offcanvas-start {
+        visibility: hidden; /* Скрываем меню по умолчанию */
+        width: 70%; /* Ширина меню */
+        position: fixed; /* Фиксированное позиционирование */
+        top: 0; /* От верхнего края */
+        left: -100%; /* Спрятать влево за пределы экрана */
+        height: 100%; /* Полная высота */
+        overflow-y: scroll; /* Скролл если контент больше высоты */
+        transition: transform 0.3s ease-in-out; /* Анимация */
+        background-color: white; /* Цвет фона */
+        z-index: 1050; /* Выше основного содержимого */
+    }
+    .offcanvas-start.show {
+        visibility: visible;
+        transform: translateX(100%); /* Перемещаем вправо на ширину самого меню */
+    }
+}
